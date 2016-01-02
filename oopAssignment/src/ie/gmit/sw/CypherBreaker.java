@@ -1,5 +1,7 @@
 package ie.gmit.sw;
 
+import ie.gmit.sw.Resultable;
+
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -30,8 +32,10 @@ public class CypherBreaker
 				while(!queue.isEmpty()){
 					try
 					{
+						
 						Resultable r = queue.take();
-						System.out.println(r);
+						
+						Resultable best = ScoreComparer.compare(r);
 						//Do something.........
 						
 					} catch (InterruptedException e)

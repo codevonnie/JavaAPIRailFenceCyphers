@@ -23,7 +23,6 @@ public class Decryptor implements Runnable
 	{
 		RailFence rf = new RailFence();
 		String plainText = rf.decrypt(cypherText, key);
-		//map = QuadGramMap.getMap();
 		
 		TextScorer tScore = new TextScorer(QuadGramMap.getMap());
 		Double score = tScore.getScore(plainText);
