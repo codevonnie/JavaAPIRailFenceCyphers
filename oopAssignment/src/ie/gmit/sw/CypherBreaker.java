@@ -25,28 +25,15 @@ public class CypherBreaker
 			new Thread(new Decryptor(queue, cypherText, i)).start();
 		}
 		
-		new Thread(new Runnable(){
-
-			public void run()
-			{
-				while(!queue.isEmpty()){
-					try
-					{
-						
-						Resultable r = queue.take();
-						
-						Resultable best = ScoreComparer.compare(r);
-						//Do something.........
-						
-					} catch (InterruptedException e)
-					{
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-				
-			}
-			
-		}).start();
+		Thread t = new Thread(new ScoreComparer(cypherText.length()/2, queue));
+		try
+		{
+			Thread.sleep(1000);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		t.start();
 	}
 }
