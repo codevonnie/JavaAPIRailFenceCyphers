@@ -6,12 +6,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class QuadGramMap
 {
 	public static final int GRAM_SIZE=4;
-	private static Map<String, Double> map = new ConcurrentHashMap<String, Double>();
+	private static Map<String, Double> map = new ConcurrentHashMap<String, Double>(); //map for QuadGram file contents
 	
 	public QuadGramMap()
 	{
 		super();
-		this.map = map;
 	}
 	public static Map<String, Double> getMap()
 	{
@@ -20,10 +19,10 @@ public class QuadGramMap
 	public static void setMap()
 	{
 		String quadFile = "4grams.txt";
-		FileParser fp = new FileParser();
+		FileParser fp = new FileParser();//create new instance of FileParser
 		try
 		{
-			map = fp.parse(quadFile);
+			map = fp.parse(quadFile); //map takes value returned from parse method when passed filepath
 			
 		} catch (Exception e)
 		{

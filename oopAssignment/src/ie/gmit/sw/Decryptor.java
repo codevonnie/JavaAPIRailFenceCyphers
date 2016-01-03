@@ -10,7 +10,7 @@ public class Decryptor implements Runnable
 	private String cypherText;
 	private int key;
 
-	public Decryptor(BlockingQueue<Resultable> queue, String cypherText, int key)
+	public Decryptor(BlockingQueue<Resultable> queue, String cypherText, int key) //constructor
 	{
 		super();
 		this.queue = queue;
@@ -19,18 +19,18 @@ public class Decryptor implements Runnable
 		
 	}
 
-	public void run()
+	public void run() //producer threads overriden run method
 	{
-		RailFence rf = new RailFence();
-		String plainText = rf.decrypt(cypherText, key);
+		RailFence rf = new RailFence(); //new instance of RailFence
+		String plainText = rf.decrypt(cypherText, key); //plainText takes value returned by RailFence decrypt method
 		
-		TextScorer tScore = new TextScorer(QuadGramMap.getMap());
-		Double score = tScore.getScore(plainText);
+		TextScorer tScore = new TextScorer(QuadGramMap.getMap()); //new instance of TextScorer
+		Double score = tScore.getScore(plainText); //score takes value from TextScorer getScore method
 		
 		Resultable r = new Result(plainText, key, score); //create a result
 		try
 		{
-			queue.put(r);
+			queue.put(r); //put result onto the queue for the consumer to take
 		} catch (InterruptedException e)
 		{
 			// TODO Auto-generated catch block

@@ -34,7 +34,7 @@ public class RailFence {
 			}
 		}
 		
-		//printMatrix(matrix); //Output the matrix (debug)
+		printMatrix(matrix); //Output the matrix (debug)
 		
 		//Extract the cypher text
 		StringBuffer sb = new StringBuffer(); //A string buffer allows a string to be built efficiently
@@ -124,7 +124,8 @@ public class RailFence {
 	}
 		
 	public static void main(String[] args) throws Exception{
-//		String s = new RailFence().decrypt("TTFOHATGRNREEANOETYRCIMHHAKT", 5);
-//		System.out.println(">" + s);
+		//String s = new RailFence().decrypt("TTFOHATGRNREEANOETYRCIMHHAKT", 5);
+		//String s = new RailFence().encrypt("", 3);
+		//System.out.println(">" + s);
 	}
 }
