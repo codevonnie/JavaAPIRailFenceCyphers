@@ -31,7 +31,6 @@ public class CypherBreaker
 			Thread.sleep(1000); //make thread sleep to allow it to finish task
 		} catch (InterruptedException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		t.start(); //start thread

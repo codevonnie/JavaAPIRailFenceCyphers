@@ -23,7 +23,7 @@ public class Runner
 			new CypherBreaker(file); //create new CypherBreaker
 		} catch (IOException e)
 		{
-			System.out.println("Could not find specified file");
+			System.out.println("Could not find specified file");//tell the user if the file could not be found
 			//e.printStackTrace();
 		}
 

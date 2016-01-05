@@ -26,7 +26,6 @@ public class QuadGramMap
 			
 		} catch (Exception e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
