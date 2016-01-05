@@ -8,30 +8,15 @@ import java.util.concurrent.BlockingQueue;
 
 public class Runner
 {
-	private static String file; 
+	private static String input; 
 			
 	public static void main(String[] args)
 	{
 		QuadGramMap.setMap(); //call setMap method from QuadGramMap class
 		Scanner console = new Scanner(System.in);
-		System.out.print("Enter pathfile for decryption: ");
-		file = console.nextLine(); //read in file from user
-		FileParser fp = new FileParser(); //create instance of FileParser 
-		try
-		{
-			file=fp.readFile(file); //read file to string in readFile method
-			new CypherBreaker(file); //create new CypherBreaker
-		} catch (IOException e)
-		{
-			System.out.println("Could not find specified file");//tell the user if the file could not be found
-			//e.printStackTrace();
-		}
-
-		
-
-		
-		
-		
+		System.out.print("Enter cyphertext or pathfile (including .txt extention) for decryption: ");
+		input = console.nextLine(); //read in filepath or cyphertext from user
+		InputChecker ic = new InputChecker(); //create instance of InputChecker
+		ic.inputType(input); //check whether input is filepath or cyphertext
 	}
-
 }
