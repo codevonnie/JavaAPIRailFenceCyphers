@@ -34,7 +34,7 @@ public class RailFence {
 			}
 		}
 		
-		printMatrix(matrix); //Output the matrix (debug)
+		//printMatrix(matrix); //Output the matrix (debug)
 		
 		//Extract the cypher text
 		StringBuffer sb = new StringBuffer(); //A string buffer allows a string to be built efficiently

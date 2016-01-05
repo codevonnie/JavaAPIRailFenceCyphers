@@ -4,11 +4,12 @@ import java.io.IOException;
 
 public class InputChecker
 {
+	private static FileReader fr = new FileReader(); //create instance of FileParser
+	
 	public void inputType(String input){ //check whether input is filepath or cyphertext
 		
 		if(input.contains(".")){ //if the input contains char . it is taken to be a filepath
-			
-			FileReader fr = new FileReader(); //create instance of FileParser 
+			 
 			try
 			{
 				input=fr.readFile(input); //read file to string in FilerReader readFile method

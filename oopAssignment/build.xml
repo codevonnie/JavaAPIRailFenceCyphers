@@ -2,9 +2,9 @@
 <!-- ===================================================================================
      GALWAY-MAYO INSTITUTE OF TECHNOLOGY 
      
-     Copyright 2015. 		<Your Name>
+     Copyright 2015. 		Yvonne Grealy
      						B.Sc. in Software Development
-							<your id>@gmit.ie
+							g00306806@gmit.ie
      						Object-Oriented Programming
      						
      						A Multi-threaded Cypher Breaker
@@ -65,7 +65,7 @@
     
 	<!-- Compile source code -->
 	<target name="compile" depends="init">
-		<javac target="${jre.target}" source="${jre.target}" srcdir="${srcDir}" destdir="${distDir}">
+		<javac includeantruntime="false" target="${jre.target}" source="${jre.target}" srcdir="${srcDir}" destdir="${distDir}">
 		    <classpath refid="classpath" />
 		</javac>
 	</target>

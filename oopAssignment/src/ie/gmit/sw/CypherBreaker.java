@@ -2,7 +2,6 @@ package ie.gmit.sw;
 
 import ie.gmit.sw.Resultable;
 
-import java.util.*;
 import java.util.concurrent.*;
 
 public class CypherBreaker
@@ -28,7 +27,7 @@ public class CypherBreaker
 		Thread t = new Thread(new ScoreComparer(cypherText.length()/2, queue)); //new consumer thread of type ScoreComparer
 		try
 		{
-			Thread.sleep(1000); //make thread sleep to allow it to finish task
+			Thread.sleep(2000); //make thread sleep to allow it to finish task
 		} catch (InterruptedException e)
 		{
 			e.printStackTrace();

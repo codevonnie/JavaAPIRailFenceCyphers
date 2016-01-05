@@ -7,6 +7,7 @@ public class QuadGramMap
 {
 	public static final int GRAM_SIZE=4;
 	private static Map<String, Double> map = new ConcurrentHashMap<String, Double>(); //map for QuadGram file contents
+	private static FileParser fp = new FileParser();//create new instance of FileParser
 	
 	public QuadGramMap()
 	{
@@ -19,7 +20,7 @@ public class QuadGramMap
 	public static void setMap()
 	{
 		String quadFile = "4grams.txt";
-		FileParser fp = new FileParser();//create new instance of FileParser
+		
 		try
 		{
 			map = fp.parse(quadFile); //map takes value returned from parse method when passed filepath
